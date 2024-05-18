@@ -33,6 +33,11 @@ const productSchema = new mongoose.Schema({
     name: {
         type: String,
         required: true
+    },    
+    price: {
+        type: Number,
+        required: true,
+        default: 0
     },
     image: {
         type: String,
@@ -57,11 +62,6 @@ const productSchema = new mongoose.Schema({
         default: 0
     },
     numReviews: {
-        type: Number,
-        required: true,
-        default: 0
-    },
-    price: {
         type: Number,
         required: true,
         default: 0
