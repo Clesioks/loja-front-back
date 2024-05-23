@@ -196,6 +196,21 @@ const updateUser = asyncHandler (async (req, res) => {
     }
 })
 
+//@desc Create users
+//@route POST /api/users
+//@access Private/Admin
+
+const createUser = asyncHandler (async (req, res) => {
+    const user = new User({
+        name: 'Usuário Modelo',
+        email: 'seuEmail@email.com',
+        password: '123456',
+        isAdmin: false
+    })
+    const createUser = await user.save()
+    res.status(201).json(createUser)
+})
+
 
 export {
     authUser,
@@ -206,5 +221,6 @@ export {
     getUsers,
     deleteUser,
     getUserByID,
-    updateUser
+    updateUser,
+    createUser
 }
