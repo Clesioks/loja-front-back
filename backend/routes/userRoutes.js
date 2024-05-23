@@ -17,7 +17,7 @@ router.route('/').post(registerUser).get(protect, admin, getUsers)
 router.post('/logout', logoutUser)
 router.post('/auth', authUser)
 router.route('/profile').get(protect, getUserProfile).put(protect, updateUserProfile)
-router.route('/:id').delete(admin, getUsers, deleteUser).get(admin, getUsers, getUserByID).put(admin, getUsers, updateUser)
+router.route('/:id').delete(protect, admin, deleteUser).get(protect, admin, getUserByID).put(protect, admin, updateUser)
 
 
  
