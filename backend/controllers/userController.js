@@ -201,14 +201,15 @@ const updateUser = asyncHandler (async (req, res) => {
 //@access Private/Admin
 
 const createUser = asyncHandler (async (req, res) => {
-    const user = new User({
+    
+    const user = await new User.create({        
         name: 'Usuário Modelo',
         email: 'seuEmail@email.com',
-        password: '123456',
-        isAdmin: false
+        password: "123456",
     })
     const createUser = await user.save()
     res.status(201).json(createUser)
+  
 })
 
 
